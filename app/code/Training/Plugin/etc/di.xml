@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<config>
+    <type name="Magento\Catalog\Model\Product">
+        <plugin name="modify_price" type="Training\Plugin\Product" sortOrder="10" disabled="false"/>
+    </type>
+    <type name="Magento\Theme\Block\Html\Footer">
+        <plugin name="modify_footer" type="Training\Plugin\Footer" sortOrder="20" disabled="false"/>
+    </type>
+    <type name="Magento\Theme\Block\Html\Breadcrumbs">
+        <plugin name="modify_crumbName" type="Training\Plugin\Breadcrumbs" sortOrder="30" disabled="false"/>
+    </type>
+</config>
