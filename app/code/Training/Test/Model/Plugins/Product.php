@@ -1,6 +1,6 @@
 <?php
 
-namespace Training\Test\Controller\Plugins;
+namespace Training\Test\Model\Plugins;
 
 class Product
 {

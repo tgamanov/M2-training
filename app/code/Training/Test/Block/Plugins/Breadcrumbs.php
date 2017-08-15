@@ -1,6 +1,6 @@
 <?php
 
-namespace Training\Test\Controller\Plugins;
+namespace Training\Test\Block\Plugins;
 
 class Breadcrumbs
 {
