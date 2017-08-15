@@ -9,5 +9,5 @@
             </argument>
         </arguments>
     </type>
-    <preference for="Training\Test\Api\ProductRepositoryInterface" type="Magento\Catalog\Model\ProductRepository" />
+    <preference for="Training\Test\MagentoU\Test" type="Magento\Catalog\Model\ProductRepository" />
 </config>

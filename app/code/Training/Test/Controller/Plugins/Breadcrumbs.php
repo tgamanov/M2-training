@@ -1,10 +1,10 @@
 <?php
 
-namespace Training\Plugin;
+namespace Training\Test\Controller\Plugins;
 
 class Breadcrumbs
 {
-    public function aroundaddCrumb(\Magento\Theme\Block\Html\Breadcrumbs $subject, \Closure $proceed, $crumbName, $crumbInfo)
+    public function aroundAddCrumb(\Magento\Theme\Block\Html\Breadcrumbs $subject, \Closure $proceed, $crumbName, $crumbInfo)
     {
         $crumbName = $crumbName."!";
         $crumbInfo['label'] = $crumbName;
