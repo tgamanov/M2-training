@@ -10,4 +10,13 @@
         </arguments>
     </type>
     <preference for="Training\Test\MagentoU\Test" type="Magento\Catalog\Model\ProductRepository" />
+    <type name="Magento\Catalog\Model\Product">
+        <plugin name="modify_price" type="Training\Test\Controller\Plugins\Product" sortOrder="10" disabled="false"/>
+    </type>
+    <type name="Magento\Theme\Block\Html\Footer">
+        <plugin name="modify_footer" type="Training\Test\Controller\Plugins\Footer" sortOrder="20" disabled="false"/>
+    </type>
+    <type name="Magento\Theme\Block\Html\Breadcrumbs">
+        <plugin name="modify_crumbName" type="Training\Test\Controller\Plugins\Breadcrumbs" sortOrder="30" disabled="false"/>
+    </type>
 </config>
