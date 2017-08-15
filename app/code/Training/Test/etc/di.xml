@@ -19,4 +19,5 @@
     <type name="Magento\Theme\Block\Html\Breadcrumbs">
         <plugin name="modify_crumbName" type="Training\Test\Controller\Plugins\Breadcrumbs" sortOrder="30" disabled="false"/>
     </type>
+    <preference for="Magento\Framework\App\FrontControllerInterface" type="Training\Test\App\FrontController" />
 </config>
