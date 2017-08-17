@@ -35,8 +35,7 @@ class FrontController extends \Magento\Framework\App\FrontController
 
     /**
      * @param \Magento\Framework\App\RequestInterface $request
-     * @return
-    \Magento\Framework\App\ResponseInterface|\Magento\Framework\Controller\ResultInterface
+     * @return \Magento\Framework\App\ResponseInterface|\Magento\Framework\Controller\ResultInterface
      */
     public function dispatch(\Magento\Framework\App\RequestInterface $request)
     {
