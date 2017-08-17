@@ -2,17 +2,10 @@
 
 namespace Training\Test\App;
 
+use Magento\Framework\App\RequestInterface;
 
 class FrontController extends \Magento\Framework\App\FrontController
 {
-    /**
-     * @var \Magento\Framework\App\RouterList
-     */
-    protected $routerList;
-    /**
-     * @var \Magento\Framework\App\Response\Http
-     */
-    protected $response;
     /**
      * @var \Psr\Log\LoggerInterface
      */
@@ -26,10 +19,9 @@ class FrontController extends \Magento\Framework\App\FrontController
     public function __construct(
         \Magento\Framework\App\RouterList $routerList,
         \Magento\Framework\App\Response\Http $response,
-        \Psr\Log\LoggerInterface $logger)
-    {
-        $this->routerList = $routerList;
-        $this->response = $response;
+        \Psr\Log\LoggerInterface $logger
+    ) {
+        parent::__construct($routerList, $response);
         $this->logger = $logger;
     }
 
@@ -37,10 +29,10 @@ class FrontController extends \Magento\Framework\App\FrontController
      * @param \Magento\Framework\App\RequestInterface $request
      * @return \Magento\Framework\App\ResponseInterface|\Magento\Framework\Controller\ResultInterface
      */
-    public function dispatch(\Magento\Framework\App\RequestInterface $request)
+    public function dispatch(RequestInterface $request)
     {
-        foreach ($this->routerList as $router) {
-            $this->logger->addDebug(get_class($router));
+        foreach ($this->_routerList as $router) {
+            $this->logger->Debug(get_class($router));
         }
         return parent::dispatch($request);
     }
