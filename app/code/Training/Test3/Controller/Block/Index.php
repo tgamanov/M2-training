@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: taras
- * Date: 8/22/17
- * Time: 11:28 PM
- */
 
 namespace Training\Test3\Controller\Block;
 
