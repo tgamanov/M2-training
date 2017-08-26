@@ -7,5 +7,10 @@
                    name="training.example.first"
                    template="Training_Render::first.phtml"/>
         </referenceContainer>
+        <referenceBlock name="page.main.title">
+            <action method="setPageTitle">
+                <argument translate="true" name="title" xsi:type="string">Custom page tittle</argument>
+            </action>
+        </referenceBlock>
     </body>
 </page>
