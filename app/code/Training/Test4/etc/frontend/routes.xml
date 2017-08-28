@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
+
+
+    <router id="standard">
+        <route id="test4" frontName="test4">
+            <module name="Training_Test4"/>
+        </route>
+    </router>
+</config>
