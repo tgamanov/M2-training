@@ -3,6 +3,8 @@
 namespace Training\Orm\Setup;
 
 use Magento\Catalog\Model\Product;
+use Magento\Catalog\Setup\CategorySetup;
+use Magento\Catalog\Setup\CategorySetupFactory;
 use Magento\Catalog\Ui\DataProvider\Product\Form\Modifier\Eav;
 use Magento\Eav\Model\Attribute;
 use Magento\Eav\Model\Entity;
@@ -20,12 +22,17 @@ class UpgradeData implements UpgradeDataInterface
 {
     /**
      * @var EavSetup
+     * @var CategorySetupFactory
+     * @var DbVersion
      */
-    private $eavSetup;
 
-    public function __construct(EavSetup $eavSetup)
+    private $eavSetup;
+    private $categorySetupFactory;
+
+    public function __construct(EavSetup $eavSetup, CategorySetupFactory $categorySetupFactory)
     {
         $this->eavSetup = $eavSetup;
+        $this->categorySetupFactory = $categorySetupFactory;
     }
 
     /**
@@ -60,6 +67,22 @@ class UpgradeData implements UpgradeDataInterface
                     ]
                 ],
             ]);
+        }
+
+        $dbVersion = $context->getVersion();
+
+        if (version_compare($dbVersion, '0.1.2', '<')) {
+            /** @var CategorySetup $catalogSetup */
+            $categorySetupFactory = $this->categorySetupFactory->create(['setup' => $setup]);
+            $categorySetupFactory->updateAttribute(
+                Product::ENTITY,
+                'wow_level',
+                [
+                    'frontend_model' =>
+                        \Training\Orm\Entity\Attribute\Frontend\HtmlList::class,
+                    'is_html_allowed_on_front' => 1,
+                ]
+            );
         }
     }
 }
