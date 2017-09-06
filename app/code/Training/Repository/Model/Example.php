@@ -4,13 +4,12 @@ namespace Training\Repository\Model;
 
 use Magento\Framework\Model\AbstractModel;
 use Training\Repository\Api\Data\ExampleInterface;
-use Training\Repository\Model\ResourceModel\Example\Collection as ExampleCollection;
 
 class Example extends AbstractModel implements ExampleInterface
 {
     protected function _construct()
     {
-        $this->_init(ExampleCollection::class);
+        $this->_init("Training\Repository\Model\ResourceModel\Example");
     }
 
     public function getName()
