@@ -2,6 +2,6 @@
 
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
     <menu>
-        <add id="Unit6_ComputerGames::games_list" title="Games" module="Unit6_ComputerGames" sortOrder="0" parent="Magento_Catalog::inventory" action="games/grid/index" resource="Unit6_ComputerGames::game"/>
+        <add id="Training_ComputerGames::games_list" title="Games" module="Training_ComputerGames" sortOrder="50" parent="Magento_Catalog::inventory" action="games/grid/index" resource="Training_ComputerGames::game"/>
     </menu>
 </config>
