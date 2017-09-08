@@ -21,7 +21,7 @@
                     <item name="config" xsi:type="array">
                         <item name="type" xsi:type="string">verify</item>
                         <item name="label" xsi:type="string" translate="true">Verify</item>
-                        <item name="url" xsi:type="url" path="training_requireverification/order/verify"/>
+                        <item name="url" xsi:type="url" path="unit6_requireverification/order/verify"/>
                     </item>
                 </argument>
             </action>
