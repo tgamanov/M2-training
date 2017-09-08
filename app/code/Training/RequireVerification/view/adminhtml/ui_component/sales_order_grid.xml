@@ -14,7 +14,7 @@
             </argument>
         </column>
     </columns>
-    <container name="listing_top">
+    <listingToolbar name="listing_top">
         <massaction name="listing_massaction">
             <action name="verify">
                 <argument name="data" xsi:type="array">
@@ -26,5 +26,5 @@
                 </argument>
             </action>
         </massaction>
-    </container>
+    </listingToolbar>
 </listing>
