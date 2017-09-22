@@ -10,6 +10,11 @@ class Collection extends \Magento\Framework\Model\ResourceModel\Db\Collection\Ab
      */
     protected $_idFieldName = 'training_contacts_id';
 
+    /**
+     * Define resource model
+     *
+     * @return void
+     */
 
     protected function _construct()
     {

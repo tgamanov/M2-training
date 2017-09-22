@@ -1,6 +1,39 @@
 <?xml version="1.0" ?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
     <type name="Magento\Contact\Controller\Index\Post">
-        <plugin name="save_contacts_post" type="Training\Contacts\Controller\Index\Post" sortOrder="10" disabled="false"/>
+        <plugin name="save_contacts_post" type="Training\Contacts\Controller\Contacts\Post" sortOrder="10" disabled="false"/>
+    </type>
+    <preference for="Training\Contacts\Api\Data\ContactsInterface" type="Training\Contacts\Model\Contacts" />
+    <type name="Magento\Framework\EntityManager\MetadataPool">
+        <arguments>
+            <argument name="metadata" xsi:type="array">
+                <item name="Training\Contacts\Api\Data\ContactsInterface" xsi:type="array">
+                    <item name="entityTableName" xsi:type="string">training_contacts</item>
+                    <item name="identifierField" xsi:type="string">training_contacts_id</item>
+                </item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Magento\Framework\EntityManager\HydratorPool">
+        <arguments>
+            <argument name="hydrators" xsi:type="array">
+                <item name="Training\Contacts\Api\Data\ContactsInterface" xsi:type="string">Magento\Framework\EntityManager\AbstractModelHydrator</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="contacts_listing_data_source" xsi:type="string">Training\Contacts\Model\ResourceModel\Contacts\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Training\Contacts\Model\ResourceModel\Contacts\Grid\Collection">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">training_contacts</argument>
+            <argument name="eventPrefix" xsi:type="string">training_test_grid_collection</argument>
+            <argument name="eventObject" xsi:type="string">post_grid_collection</argument>
+            <argument name="resourceModel" xsi:type="string">Training\Contacts\Model\ResourceModel\Contacts</argument>
+        </arguments>
     </type>
 </config>

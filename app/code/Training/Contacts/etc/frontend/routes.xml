@@ -3,9 +3,9 @@
         xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
 
 
-    <router id="standard">
+    <router id="admin">
         <route id="contacts" frontName="contacts">
-            <module name="Training_Contacts"/>
+            <module name="Training_Contacts" before="Magento_Backend"/>
         </route>
     </router>
 </config>
