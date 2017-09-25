@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Training\Contacts\Controller\Contacts;
+namespace Training\Contacts\Controller\Adminhtml\Contacts;
 
 use Magento\Backend\App\Action\Context;
 use Magento\Framework\View\Result\PageFactory;
@@ -48,7 +48,7 @@ class Index extends \Magento\Backend\App\Action
         $resultPage->getConfig()->getTitle()->prepend(__('Contacts'));
 
         $dataPersistor = $this->_objectManager->get('Magento\Framework\App\Request\DataPersistorInterface');
-        $dataPersistor->clear('test_contacts');
+        $dataPersistor->clear('contacts');
 
         return $resultPage;
     }

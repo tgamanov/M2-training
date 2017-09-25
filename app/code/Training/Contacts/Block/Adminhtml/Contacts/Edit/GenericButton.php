@@ -24,7 +24,7 @@ class GenericButton
     }
 
     /**
-     * Return CMS post ID
+     * Return training_contacts_id
      *
      * @return int|null
      */

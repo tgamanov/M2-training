@@ -3,6 +3,6 @@
     <menu>
 
         <add id="Training_Contacts::contacts" title="Contacts" module="Training_Contacts"
-             resource="Magento_Backend::content" parent="Magento_Reports::report" action="Contacts" sortOrder="70"/>
+             resource="Training_Contacts::contacts" parent="Magento_Reports::report" action="contacts/contacts/index" sortOrder="70"/>
     </menu>
 </config>

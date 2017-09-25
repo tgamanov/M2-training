@@ -59,7 +59,7 @@
         </filters>
         <paging name="listing_paging"/>
     </listingToolbar>
-    <columns name="test_contacts_columns">
+    <columns name="contacts_columns">
         <argument name="data" xsi:type="array">
             <item name="config" xsi:type="array">
             </item>
@@ -73,15 +73,6 @@
                 </item>
             </argument>
         </selectionsColumn>
-        <column name="training_contacts_id">
-            <argument name="data" xsi:type="array">
-                <item name="config" xsi:type="array">
-                    <item name="filter" xsi:type="string">textRange</item>
-                    <item name="sorting" xsi:type="string">asc</item>
-                    <item name="label" xsi:type="string" translate="true">ID</item>
-                </item>
-            </argument>
-        </column>
         <column name="training_contacts_name">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
@@ -160,7 +151,7 @@
                 <item name="config" xsi:type="array">
                     <item name="resizeEnabled" xsi:type="boolean">false</item>
                     <item name="resizeDefaultWidth" xsi:type="string">107</item>
-                    <item name="indexField" xsi:type="string">page_id</item>
+                    <item name="indexField" xsi:type="string">training_contacts_id</item>
                 </item>
             </argument>
         </actionsColumn>

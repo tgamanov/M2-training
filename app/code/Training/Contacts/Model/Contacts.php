@@ -22,17 +22,17 @@ class Contacts extends AbstractModel implements \Training\Contacts\Api\Data\Cont
     /**
      * Contacts page cache tag
      */
-    const CACHE_TAG = 'training_contacts_contacts';
+    const CACHE_TAG = 'contacts';
     /**
      * @var string
      */
-    protected $_cacheTag = 'training_contacts_contacts';
+    protected $_cacheTag = 'training_contacts';
     /**
      * Prefix of model events names
      *
      * @var string
      */
-    protected $_eventPrefix = 'training_contacts_contacts';
+    protected $_eventPrefix = 'contacts';
     /**
      * Initialize resource model
      *

@@ -76,12 +76,12 @@ class DataProvider extends \Magento\Ui\DataProvider\AbstractDataProvider
             $this->loadedData[$contacts->getId()] = $contacts->getData();
         }
 
-        $data = $this->dataPersistor->get('test_contacts');
+        $data = $this->dataPersistor->get('contacts');
         if (!empty($data)) {
             $contacts = $this->collection->getNewEmptyItem();
             $contacts->setData($data);
             $this->loadedData[$contacts->getId()] = $contacts->getData();
-            $this->dataPersistor->clear('test_contacts');
+            $this->dataPersistor->clear('contacts');
         }
 
         return $this->loadedData;

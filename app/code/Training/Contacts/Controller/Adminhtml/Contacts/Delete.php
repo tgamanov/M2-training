@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Training\Contacts\Controller\Contacts;
+namespace Training\Contacts\Controller\Adminhtml\Contacts;
 
 use Magento\Backend\App\Action\Context;
 

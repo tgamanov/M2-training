@@ -31,8 +31,8 @@
     <type name="Training\Contacts\Model\ResourceModel\Contacts\Grid\Collection">
         <arguments>
             <argument name="mainTable" xsi:type="string">training_contacts</argument>
-            <argument name="eventPrefix" xsi:type="string">training_test_grid_collection</argument>
-            <argument name="eventObject" xsi:type="string">post_grid_collection</argument>
+            <argument name="eventPrefix" xsi:type="string">contacts_grid_collection</argument>
+            <argument name="eventObject" xsi:type="string">contacts_grid_collection</argument>
             <argument name="resourceModel" xsi:type="string">Training\Contacts\Model\ResourceModel\Contacts</argument>
         </arguments>
     </type>

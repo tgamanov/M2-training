@@ -18,7 +18,7 @@ class DeleteButton extends GenericButton implements ButtonProviderInterface
         $data = [];
         if ($this->getTrainingContactsId()) {
             $data = [
-                'label' => __('Delete Post'),
+                'label' => __('Delete Contacts'),
                 'class' => 'delete',
                 'on_click' => 'deleteConfirm(\'' . __(
                         'Are you sure you want to do this?'
@@ -34,6 +34,6 @@ class DeleteButton extends GenericButton implements ButtonProviderInterface
      */
     public function getDeleteUrl()
     {
-        return $this->getUrl('*/*/delete', ['post_id' => $this->getTrainingContactsId()]);
+        return $this->getUrl('*/*/delete', ['training_contacts_id' => $this->getTrainingContactsId()]);
     }
 }

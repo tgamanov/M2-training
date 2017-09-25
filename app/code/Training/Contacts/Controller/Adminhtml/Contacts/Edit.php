@@ -5,14 +5,14 @@ namespace Training\Contacts\Controller\Contacts;
 
 use Magento\Backend\App\Action;
 
-class Edit extends \Magento\Backend\App\Action
+class Edit extends Action
 {
     /**
      * Authorization level of a basic admin session
      *
      * @see _isAllowed()
      */
-    const ADMIN_RESOURCE = 'Training_Contacts::Contacts_save';
+    const ADMIN_RESOURCE = 'Training_Contacts::save';
 
     /**
      * Core registry
@@ -29,23 +29,19 @@ class Edit extends \Magento\Backend\App\Action
     /**
      * @var \Training\Contacts\Model\ContactsFactory
      */
+
     protected $contactsFactory;
 
-    /**
-     * @param Action\Context $context
-     * @param \Magento\Framework\View\Result\PageFactory $resultPageFactory
-     * @param \Magento\Framework\Registry $registry
-     */
     public function __construct(
         Action\Context $context,
         \Magento\Framework\View\Result\PageFactory $resultPageFactory,
         \Magento\Framework\Registry $registry,
-        \Training\Contacts\Model\ContactsFactory $ContactsFactory
-    )
-    {
+    \Training\Contacts\Model\ContactsFactory $contactsFactory
+
+    ) {
         $this->resultPageFactory = $resultPageFactory;
         $this->_coreRegistry = $registry;
-        $this->ContactsFactory = $contactsFactory;
+        $this->contactsFactory = $contactsFactory;
         parent::__construct($context);
     }
 
@@ -59,7 +55,7 @@ class Edit extends \Magento\Backend\App\Action
         // load layout, set active menu and breadcrumbs
         /** @var \Magento\Backend\Model\View\Result\Page $resultPage */
         $resultPage = $this->resultPageFactory->create();
-        $resultPage->setActiveMenu('Training_Contacts::Contacts')
+        $resultPage->setActiveMenu('Training_Contacts::contacts_contacts')
             ->addBreadcrumb(__('Contacts'), __('Contacts'))
             ->addBreadcrumb(__('Manage Contacts'), __('Manage Contacts'));
         return $resultPage;
@@ -75,7 +71,7 @@ class Edit extends \Magento\Backend\App\Action
     {
         // 1. Get ID and create model
         $id = $this->getRequest()->getParam('training_contacts_id');
-        $model = $this->ContactsFactory->create();
+        $model = $this->contactsFactory->create();
 
         // 2. Initial checking
         if ($id) {

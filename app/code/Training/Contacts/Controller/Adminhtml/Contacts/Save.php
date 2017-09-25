@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Training\Contacts\Controller\Contacts;
+namespace Training\Contacts\Controller\Adminhtml\Contacts;
 
 use Magento\Backend\App\Action\Context;
 use Magento\Framework\App\Request\DataPersistorInterface;
@@ -19,21 +19,13 @@ class Save extends \Magento\Backend\App\Action
     /**
      * @var \Training\Contacts\Model\ContactsFactory
      */
-    protected $contactsFactory;
 
-    /**
-     * @param \Training\Contacts\Model\ContactsFactory $contactsFactory
-     * @param Context $context
-     * @param DataPersistorInterface $dataPersistor
-     * @internal param \Magento\Framework\Registry $coreRegistry
-     */
     public function __construct(
         \Training\Contacts\Model\ContactsFactory $contactsFactory,
         Context $context,
         DataPersistorInterface $dataPersistor
     )
     {
-        $this->contactsFactory = $contactsFactory;
         $this->dataPersistor = $dataPersistor;
         parent::__construct($context);
     }
@@ -71,7 +63,7 @@ class Save extends \Magento\Backend\App\Action
             try {
                 $model->getResource()->save($model);
                 $this->messageManager->addSuccess(__('You saved the contacts.'));
-                $this->dataPersistor->clear('test_contacts');
+                $this->dataPersistor->clear('contacts');
 
                 if ($this->getRequest()->getParam('back')) {
                     return $resultRedirect->setPath('*/*/edit', ['training_contacts_id' => $model->getId()]);
@@ -83,7 +75,7 @@ class Save extends \Magento\Backend\App\Action
                 $this->messageManager->addException($e, __('Something went wrong while saving the contacts.'));
             }
 
-            $this->dataPersistor->set('test_contacts', $data);
+            $this->dataPersistor->set('contacts', $data);
             return $resultRedirect->setPath('*/*/edit', ['training_contacts_id' => $this->getRequest()->getParam('training_contacts_id')]);
         }
         return $resultRedirect->setPath('*/*/');

@@ -27,7 +27,7 @@
             <argument name="requestFieldName" xsi:type="string">training_contacts_id</argument>
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
-                    <item name="submit_url" xsi:type="url" path="training_contacts/contacts/save"/>
+                    <item name="submit_url" xsi:type="url" path="contacts/contacts/save"/>
                 </item>
             </argument>
         </argument>
